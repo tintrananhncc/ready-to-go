@@ -1,0 +1,16 @@
+name: Print Text Action
+
+on:
+  workflow_dispatch:
+    inputs:
+      text:
+        description: 'Enter text to print'
+        required: true
+        default: 'Hello, World!'
+
+jobs:
+  print_text:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print the input text
+        run: echo "${{ github.event.inputs.text }}"
